@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Premium Android TV: tam ekran player + sol cam panel (380dp) + alt EPG bar -->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:background="#0B0F14">
+
+  <!-- Tam ekran video katmanı -->
+  <androidx.media3.ui.PlayerView
+    android:id="@+id/playerView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:keepScreenOn="true"
+    app:show_buffering="when_playing"
+    app:use_controller="true" />
+
+  <!-- Solda cam efektli liste paneli (yarı saydam = frosted glass hissi) -->
+  <LinearLayout
+    android:orientation="vertical"
+    android:layout_width="380dp"
+    android:layout_height="match_parent"
+    android:layout_gravity="start"
+    android:background="#D90B0F14"
+    android:padding="12dp">
+
+    <LinearLayout
+      android:orientation="horizontal"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:gravity="center_vertical">
+
+      <EditText
+        android:id="@+id/search"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="48dp"
+        android:hint="Ara..."
+        android:textColor="#FFFFFF"
+        android:textColorHint="#8B98AB"
+        android:singleLine="true"
+        android:background="#22FFFFFF"
+        android:padding="10dp"
+        android:focusable="true"
+        android:nextFocusRight="@+id/btnLoad" />
+
+      <Button
+        android:id="@+id/btnLoad"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_marginStart="8dp"
+        android:text="Ayarlar"
+        android:focusable="true"
+        android:nextFocusLeft="@+id/search"
+        android:nextFocusDown="@+id/channels" />
+    </LinearLayout>
+
+    <TextView
+      android:id="@+id/count"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:textColor="#8B98AB"
+      android:textSize="13sp"
+      android:padding="8dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+      android:id="@+id/channels"
+      android:layout_width="match_parent"
+      android:layout_height="0dp"
+      android:layout_weight="1"
+      android:clipToPadding="false"
+      android:paddingBottom="72dp"
+      android:focusable="true" />
+  </LinearLayout>
+
+  <!-- Altta EPG / bilgi barı -->
+  <TextView
+    android:id="@+id/info"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="bottom"
+    android:background="#CC000000"
+    android:textColor="#FFFFFF"
+    android:textSize="15sp"
+    android:padding="12dp"
+    android:singleLine="true"
+    android:ellipsize="marquee"
+    android:marqueeRepeatLimit="marquee_forever"
+    android:focusable="false"
+    android:text="Kanal seç" />
+</FrameLayout>

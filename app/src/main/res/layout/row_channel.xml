@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Premium satır: 72dp logo + 17sp kanal adı + EPG alt satırı, TV D-pad focus uyumlu -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:orientation="horizontal"
+  android:layout_width="match_parent"
+  android:layout_height="88dp"
+  android:gravity="center_vertical"
+  android:padding="12dp"
+  android:focusable="true"
+  android:focusableInTouchMode="true"
+  android:background="?attr/selectableItemBackground">
+
+  <ImageView
+    android:id="@+id/logo"
+    android:layout_width="72dp"
+    android:layout_height="72dp"
+    android:scaleType="fitCenter"
+    android:contentDescription="@null"
+    android:background="#14FFFFFF" />
+
+  <LinearLayout
+    android:orientation="vertical"
+    android:layout_width="0dp"
+    android:layout_weight="1"
+    android:layout_height="wrap_content"
+    android:paddingStart="12dp">
+
+    <TextView
+      android:id="@+id/name"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:textColor="#FFFFFF"
+      android:textSize="17sp"
+      android:textStyle="bold"
+      android:singleLine="true"
+      android:ellipsize="end" />
+
+    <TextView
+      android:id="@+id/prog"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="4dp"
+      android:textColor="#B0BEC5"
+      android:textSize="13sp"
+      android:singleLine="true"
+      android:ellipsize="end" />
+  </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <!-- TV odağı için sarı focus rengi -->
+  <color name="tv_focus">#FFD60A</color>
+  <color name="tv_focus_bg">#33FFD60A</color>
+
+  <style name="Theme.Q6C" parent="Theme.AppCompat.NoActionBar">
+    <item name="android:windowBackground">#0B0F14</item>
+    <item name="android:forceDarkAllowed">false</item>
+    <!-- D-pad odağı her zaman görünür + sarı vurgu -->
+    <item name="android:defaultFocusHighlightEnabled">true</item>
+    <item name="android:colorFocusedHighlight">@color/tv_focus</item>
+    <item name="android:colorControlHighlight">@color/tv_focus_bg</item>
+  </style>
+</resources>
